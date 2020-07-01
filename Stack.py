@@ -8,18 +8,31 @@ import Node
 
 
 class Stack:
-    def __init__(self):
+    def __init__(self, limit=1000):
         self.top_element = None
+        self.size = 0
+        self.limit = limit
 
     def peek(self):
-        return self.top_element.get_value()
+        if(size > 0):
+            return self.top_element.get_value()
+        else:
+            print("Sorry the Stack is empty\n")
 
     def push(self, val):
-        item = Node(val)
-        item.set_next_node(self.top_element)
-        self.top_element = item
+        if self.size < self.limit:
+            item = Node(val)
+            item.set_next_node(self.top_element)
+            self.top_element = item
+            self.size += 1
+        else:
+            print("Sorry Stack is Full\n")
 
     def pop(self):
-        remove_item = self.top_element.get_value()
-        self.top_element = self.top_element.get_next_node()
-        return remove_item
+        if(size > 0):
+            remove_item = self.top_element
+            self.top_element = self.top_element.get_next_node()
+            self.size -= 1
+            return remove_item.get_value()
+        else:
+            print("Sorry the Stack is empty\n")
