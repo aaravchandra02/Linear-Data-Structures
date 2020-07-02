@@ -1,6 +1,6 @@
 """
 We can implement Stack - with push(),pop() and peek() using array or list.
-Due to operations that need to be performed in case the initial memory runs out,
+Due to operations that need to be performed in case the initial memory of array runs out,
 Linked List is a better suited implementation technique.
 """
 
